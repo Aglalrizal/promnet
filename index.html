@@ -1,0 +1,390 @@
+<!-- 
+    created by Rizal Aglal Faozi
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Git Summary by Rizal Aglal Faozi
+    </title>
+    <style>
+        html,
+        body {
+            min-width: 290px;
+            color: #4d4e53;
+            background-color: #ffffff;
+            font-family: 'Open Sans', Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        #navbar {
+            position: fixed;
+            min-width: 290px;
+            top: 0px;
+            left: 0px;
+            width: 300px;
+            height: 100%;
+            border-right: solid;
+            border-color: rgba(0, 22, 22, 0.4);
+        }
+
+        header {
+            color: black;
+            margin: 10px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: thin;
+        }
+
+        #main-doc header {
+            text-align: left;
+            margin: 0px;
+        }
+
+        #navbar ul {
+            height: 88%;
+            padding: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        #navbar li {
+            color: #4d4e53;
+            border-top: 1px solid;
+            list-style: none;
+            position: relative;
+            width: 100%;
+        }
+
+        #navbar a {
+            display: block;
+            padding: 10px 30px;
+            color: #4d4e53;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #main-doc {
+            position: absolute;
+            margin-left: 310px;
+            padding: 20px;
+            margin-bottom: 110px;
+        }
+
+        section p {
+            color: #4d4e53;
+            margin: 15px;
+            font-size: 0.96em;
+        }
+
+        section li {
+            margin: 15px 0px 0px 20px;
+        }
+
+        code {
+            display: block;
+            text-align: left;
+            position: relative;
+            word-break: normal;
+            word-wrap: normal;
+            line-height: 1.5;
+            background-color: #252424;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            color: #ffffff;
+        }
+
+        @media only screen and (max-width: 815px) {
+
+            /* For mobile phones: */
+            #navbar ul {
+                border: 1px solid;
+                height: 207px;
+            }
+
+            #navbar {
+                background-color: white;
+                position: absolute;
+                top: 0;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                max-height: 275px;
+                border: none;
+                z-index: 1;
+                border-bottom: 2px solid;
+            }
+
+            #main-doc {
+                position: relative;
+                margin-left: 0px;
+                margin-top: 270px;
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            #main-doc {
+                margin-left: -10px;
+            }
+
+            code {
+                margin-left: -20px;
+                width: 100%;
+                padding: 15px;
+                padding-left: 10px;
+                padding-right: 45px;
+                min-width: 233px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>Git</header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduksi</a></li>
+            <li><a class="nav-link" href="#benefit">Benefit</a></li>
+            <li><a class="nav-link" href="#Git_and_GitHub">Git dan GitHub</a></li>
+            <li><a class="nav-link" href="#git">Git</a></li>
+            <li><a class="nav-link" href="#git-init">Perintah dasar: git init </a></li>
+            <li><a class="nav-link" href="#git-add">Perintah dasar: git add</a></li>
+            <li><a class="nav-link" href="#git-status">Perintah dasar: git status</a></li>
+            <li><a class="nav-link" href="#git-commit">Perintah dasar: git commit</a></li>
+            <li><a class="nav-link" href="#git-log">Perintah dasar: git log</a></li>
+            <li><a class="nav-link" href="#git-checkout">Perintah dasar: git checkout</a></li>
+            <li><a class="nav-link" href="#git-branch">Perintah dasar: git branch</a></li>
+            <li><a class="nav-link" href="#git-push">Perintah dasar: git push</a></li>
+            <li><a class="nav-link" href="#git-pull">Perintah dasar: git pull</a></li>
+            <li><a class="nav-link" href="#git-fetch">Perintah dasar: git fetch</a></li>
+            <li><a class="nav-link" href="#git-clone">Perintah dasar: git clone</a></li>
+            <li><a class="nav-link" href="#github-pages">GitHub Pages</a></li>
+            
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section id="Introduction" class="main-section">
+            <header>Introduksi</header>
+            <p>
+                Sebelum kita membahas Git, baiknya kita mengenal terlebih dahulu VCS atau Version Control System.
+                Version control system adalah sebuah sistem yang dapat mengelola perubahan dalam file, baik itu
+                berupa dokumen, source code ataupun program komputer.
+            </p>
+            <p>
+                Dan Git merupakan salah satu software VCS paling populer saat ini, seperti VCS pada umumnya, Git
+                berfungsi untuk mengelola perubahan di dalam folder(repository). Riwayat perubahan disimpan melalui
+                serangkaian commit.
+            </p>
+        </section>
+        <section id="benefit" class="main-section">
+            <header>Benefit</header>
+            <p>
+                Berikut merupakan hal-hal yang bisa dilakukan oleh Git:
+            </p>
+            <ul>
+                <li>Menyimpan 'rekaman/snapshot' perubahan pada source code;</li>
+                <li>Memungkinkan kolaborasi tim yang lebih baik;</li>
+                <li>Mengetahui siapa yang melakukan perubahan dan kapan perubahan dilakukan;</li>
+                <li>Memungkinkan user untuk kembali ke keadaan sebelum perubahan dengan memanfaatkan fitur checkout.
+                </li>
+            </ul>
+        </section>
+        <section id="Git_and_GitHub" class="main-section">
+            <header>Git dan GitHub</header>
+            <p>
+                Pernahkah kalian bertanya-tanya "Git sama GitHub sama gak sih?"
+                "kalo instal Git doang tanpa pake GitHub atau sebaliknya bisa gak sih?".</p>
+            <p>
+                Pertama, Git dan GitHub tidaklah sama, Git adalah VCS yang menyimpan rekaman perubahan pada file/source
+                code secara lokal di komputer kita, oleh karena itu, untuk menggunakan Git kita perlu menginstalnya
+                terlebih dahulu. Sedangkan GitHub adalah situs web yang memungkinkan kita untuk menyimpan rekaman
+                perubahan file/source di internet, jadi dengan GitHub, kita dapat mengunggah source kita ke server
+                GitHub sehingga dapat diakses secara online. Dan orang lain dapat berkolaborasi dengan kita di sana,
+                melihat kode kita, memberikan masukan, atau bahkan menyumbang perubahan. Berikut merupakan ilustrasinya
+                <img src="./img/git-github.png" alt="local-remote repository" style="width: 100%;">
+            </p>
+            <p>
+                Kedua, bisa saja, namun bila hanya menggunakan Git saja salah satu kekurangannya adalah kita harus
+                selalu membawa komputer kita kemana-mana bila ingin melanjutkan pembuatan suatu file atau program, hal
+                ini dikarenakan kita tidak memiliki salinan progres kerja kita yang disimpan secara remote(pada GitHub
+                misalnya),
+                jadi kurang fleksibel dan berimbas pada terbatasnya kolaborasi dengan orang lain. Sedangkan jika hanya
+                menggunakan GitHub, kita tidak akan memiliki kontrol penuh atas source code secara lokal, yang berarti
+                kita tidak dapat mengelola perubahan atau cabang secara offline atau tanpa koneksi internet, dan kita
+                juga tidak akan dapat menggunakan Git untuk proyek yang sepenuhnya offline atau terisolasi. Jadi,
+                baiknya kita menggunakan keduanya, menggunakan Git di komputer lokal untuk mengelola source dan kemudian
+                mengunggah kode tersebut ke GitHub atau platform hosting Git lainnya agar bisa berkolaborasi dengan tim
+                dan membuat source code tersedia secara online agar bisa diakses dimana saja.
+            </p>
+        </section>
+        <section id="git" class="main-section">
+            <header>Git</header>
+            <p>
+                Langkah pertama untuk menggunakan Git tentu saja dengan menginstalnya di komputer kita.
+                <a href="https://git-scm.com/downloads" target="_blank">klik disini</a> untuk mengunduh git, pilih versi
+                yang sesuai dengan OS kamu ya.
+            </p>
+            <p>
+                Setelah itu sila buka git bash/cmd/terminal untuk mengkonfigurasi/set up git, selanjutnya, sila ketikan
+                perintah berikut:
+            </p>
+            <code>
+                git config --global user.name "username_kamu"
+                <br />
+                git config --global user.email "email_kamu"
+            </code>
+            <p>
+                Jika langkah-langkah di atas telah dilakukan mari kita bermain dengan Git.
+            </p>
+        </section>
+        <section class="main-section" style="background-color: #f1d34c;">
+            <p style="font-size: medium; padding: 10px 0;">Semua perintah di bawah ini dilakukan pada gitbash, cmd
+                ataupun terminal.</p>
+        </section>
+        <section id="git-init" class="main-section">
+            <header>Perintah dasar git: git init</header>
+            <p>
+                git init berfungsi untuk membuat repository kosong yang baru atau mengubah folder yang telah ada menjadi
+                sebuah git repository.
+            </p>
+            <code>
+                git init
+            </code>
+        </section>
+        <section id="git-add" class="main-section">
+            <header>Perintah dasar git: git add</header>
+            <p>
+                git add berfungsi untuk menambahkan dan mendata perubahan yang terjadi ke staging area,
+                perubahan-perubahan yang
+                sudah di add inilah yang nantinya direkam pada saat commit dilakukan.
+            </p>
+            <p>git add . : untuk menambahkan seluruh perubahan yang terjadi pada repo.</p>
+            <code>git add .</code>
+            <p>git add namafile.format : untuk menambahkan satu file tertentu.</p>
+            <code>git add namafile.format</code>
+        </section>
+        <section id="git-status" class="main-section">
+            <header>Perintah dasar git: git status</header>
+            <p>git status berfungsi untuk mengecek daftar perubahan yang terjadi, baik yang sudah terdata artinya sudah
+                ditambahkan ke dalam staging area melalui perintah git add ataupun yang belum.</p>
+            <code>
+                git status
+            </code>
+        </section>
+        <section id="git-commit" class="main-section">
+            <header>Perintah dasar git: git commit</header>
+            <p>git commit berfungsi untuk menyimpan perubahan yang terdata di staging area. Biasanya diikuti oleh -m
+                "pesan commit".</p>
+            <code>git commit -m "menambahkan index.html"</code>
+            <p>pesan sangat berguna untuk memberi tahu perubahan apa yang dilakukan, misal pada kode di atas, pesannya
+                adalah menambahkan index.html, artinya perubahan yang dilakukan oleh orang yang melakukan commit adalah
+                menambah index.html ke dalam repository.</p>
+        </section>
+        <section id="git-log" class="main-section">
+            <header>Perintah dasar git: git log</header>
+            <p>
+                git log digunakan untuk menampilkan daftar commit yang dilakukan pada suatu repository.
+            </p>
+            <code>
+                git log
+            </code>
+            <p>
+                <img src="./img/git-log.png" alt="data yang ditampilkan saat git log" style="width: 100%;">
+                Berdasarkan gambar diatas, data commit yang ditampilkan adalah id commit yang berwarna kuning, lalu yang
+                di dalam kurung adalah branch tempat commit dilakukan, selanjutnya ada author(orang yang melakukan
+                commit), lalu ada date yang berisi data waktu commit tersebut dilakukan dan terakhir ada pesan commit
+                "update hello.txt".
+            </p>
+        </section>
+        <section id="git-checkout" class="main-section">
+            <header>Perintah dasar git: git checkout</header>
+            <p>
+                git checkout berfungsi untuk beralih ke branch/cabang atau commit tertentu.
+            </p>
+            <p>Untuk beralih branch/cabang gunakan kode berikut</p>
+            <code>git checkout nama_cabang</code>
+            <p>Untuk beralih ke commit tertentu</p>
+            <code>git checkout id_commit</code>
+        </section>
+        <section id="git-branch" class="main-section">
+            <header>Branching</header>
+            <p>Branch atau cabang telah beberapa kali disebutkan diatas, sebenarnya apa sih branch itu?
+                <img src="./img/branching.png" alt="ilustrasi branching" style="width: 50%; display: block;">
+                Setiap repository setidaknya mempunyai sebuah cabang yang merupakan cabang utama biasanya bernama main
+                atau master, kita bisa membuat cabang tambahan dari cabang utama ini untuk mengembangkan fitur baru,
+                memperbaiki bug, atau melakukan pekerjaan terpisah tanpa memengaruhi kode di cabang utama.
+            </p>
+            <p>Perintah untuk melihat cabang yang ada pada repository</p>
+            <code>git branch</code>
+            <p>Perintah untuk membuat cabang baru</p>
+            <code>git branch nama_branch</code>
+            <p>Lalu bisakah kita menggabungkan perubahan dari satu branch ke branch lainnya? tentu saja bisa, bisa
+                dilihat pada gambar di atas your work(biru) merupakan cabang dari branch master(hijau) dan mempunyai
+                jalurnya tersendiri, namun pada akhirnya branch your work(biru) bergabung dengan branch master(hijau).
+                Fungsi ini dinamakan dengan merge, dapat dilakukan dengan perintah: </p>
+            <code>git merge nama_cabang</code>
+        </section>
+        <section id="git-push" class="main-section">
+            <header>Perintah dasar git: git push</header>
+            <p>git push berfungsi untuk mengirim perubahan berupa commit yang dilakukan ke remote repository, salah satu
+                website yang dapat menyimpan repository kita secara online adalah GitHub, oleh karena itu, sila buat
+                akun GitHub-nya terlebih dahulu bila belum mempunyai akun. Sila klik link berikut untuk daftar GitHub:
+                <a href="https://github.com/signup" target="_blank">Gas daftar!</a>
+                <span id="add-remote" style="background-color: #f3e295;">Namun, sebelum bisa melakukan push kita harus
+                    menambahkan alamat remote repository, bila di dalam akun GitHubnya belum memiliki repository, sila
+                    buat repository terlebih dahulu, jika sudah, salin alamat repository tersebut. Untuk menambahkan
+                    alamat remote repository gunakan perintah:</span></p>
+            <code>
+                git add remote origin https://github.com/username/name_repo.git
+            </code>
+            <p>Setelah melakukan hal tersebut baru kita bisa melakukan push dengan menggunakan perintah git push</p>
+            <code>
+                git push
+            </code>
+        </section>
+        <section id="git-pull" class="main-section">
+            <header>Perintah dasar git: git pull</header>
+            <p>git pull merupakan kebalikan daripada git push, jadi fungsinya adalah untuk mengambil perubahan dari
+                remote repository dan biasanya digunakan untuk menggabungkan perubahan dari remote repository ke dalam
+                repository lokal. Sebelum bisa melakukan pull, repository lokal kita harus telah terhubung dengan remote
+                repository-nya, cara menghubungkannya ada di bagian git push.</p>
+            <p>Untuk mengecek remote repository yang terhubung gunakan perintah: </p>
+            <code>git remote -v</code>
+            <p>Selanjutnya, untuk melakukan pull gunakan perintah: </p>
+            <code>git pull</code>
+        </section>
+        <section id="git-fetch" class="main-section">
+            <header>Perintah dasar git: git fetch</header>
+            <p>git fetch ini fungsinya mirip dengan git pull namun perintah ini hanya mengambil perubahan dari remote
+                repository tanpa menggabungkannya</p>
+            <p>Oiya, sama seperti push dan pull sebelum bisa menggunakan perintah fetch, kita harus terhubung terlebih
+                dahulu dengan remote repository-nya. Berikut cara menggunakan perintah fetch: </p>
+            <code>
+                git fetch
+            </code>
+        </section>
+        <section id="git-clone" class="main-section">
+            <header>Perintah dasar git: git clone</header>
+            <p>Diatas telah disebutkan bahwa penggunaan remote repository bisa membantu mempermudah kolaborasi dan
+                karena online kita bisa mengaksesnya dimana saja dengan komputer siapapun. Nah untuk melakukan hal
+                tersebut, git clone hadir dengan fungsi untuk menyalin remote repository entah milik kita maupun milik
+                orang lain ke komputer yang menjalankan perintah tersebut dan tersimpan secara lokal.</p>
+            <p>Nah cara untuk melakukan clone adalah dengan menjalankan perintah: </p>
+            <code>git clone alamat_repo_yang_ingin_diclone</code>
+        </section>
+        <section id="github-pages" class="main-section">
+            <header>GitHub Pages</header>
+            <p>GitHub pages adalah layanan hosting dari github yang memungkinkan kita untuk menerbitkan situs web statis
+                secara gratis. Dan situs web ini memanfaatkan fitur GitHub pages.</p>
+        </section>
+        <br>
+        <br>
+        <footer style="text-align: center;">&copy;copyright 2023 | Rizal Aglal Faozi</footer>
+    </main>
+</body>
+
+</html>
